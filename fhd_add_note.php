@@ -56,15 +56,15 @@ if (isset($_POST['add'])){
 		$headers .="X-Mailer: PHP/" . phpversion() ."\r\n";
 		$headers .="MIME-Version: 1.0" . "\r\n";
 		$headers .="Content-type: text/html; charset=iso-8859-1" . "\r\n";
-		$subject = "Ticket [# $note_relation] Updated";
+		$subject = "Cop [# $note_relation] Updated";
 		$message = "
 		<html>
 		<head>
-		<title>Ticket Updated</title>
+		<title>Cop Updated</title>
 		</head>
 		<body>
-		<p>Ticket Updated.</p>
-		<p>Ticket Number: $note_relation</p>
+		<p>Cop Updated.</p>
+		<p>Cop Number: $note_relation</p>
 		<p>Note Details: $note_body</p>
 		";
 		mail($call_email, $subject, $message, $headers);
@@ -107,7 +107,7 @@ $note_body = $db->get_var("select note_body from site_notes where note_id = $not
 <input type='hidden' name='nacl' value='<?php echo $nacl;?>'>
 <input type='hidden' name='note_id' value='<?php echo checkid($_GET['note_id']);?>'>
 </form>
-<h5><i class="fa fa-arrow-left"></i> <a href="fhd_call_edit.php?call_id=<?php echo $call_id;?>">back to ticket details</a></h5>
+<h5><i class="fa fa-arrow-left"></i> <a href="fhd_call_edit.php?call_id=<?php echo $call_id;?>">back to Cop details</a></h5>
 <?php } 
 
 //ADD note
@@ -128,9 +128,9 @@ $nacl = md5(AUTH_KEY.$db->get_var("select user_password from site_users where us
 </form>
 </table>
 	<?php if(isset($_SESSION['admin'])){ ?>
-		<h5><i class="fa fa-arrow-left"></i> <a href="fhd_call_edit.php?call_id=<?php echo $call_id;?>">back to ticket details</a></h5>
+		<h5><i class="fa fa-arrow-left"></i> <a href="fhd_call_edit.php?call_id=<?php echo $call_id;?>">back to Cop details</a></h5>
 		<?php }else{ ?>
-		<h5><i class="fa fa-arrow-left"></i> <a href="fhd_call_details.php?call_id=<?php echo $call_id;?>">back to ticket details</a></h5>
+		<h5><i class="fa fa-arrow-left"></i> <a href="fhd_call_details.php?call_id=<?php echo $call_id;?>">back to Cop details</a></h5>
 	<?php } ?>
 
 <?php } ?>

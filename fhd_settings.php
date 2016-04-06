@@ -8,7 +8,7 @@ include("includes/checksessionadmin.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Help Desk Settings</title>
+	<title>AdminCop Settings</title>
 <?php
 include("fhd_config.php");
 include("includes/header.php");
@@ -26,7 +26,7 @@ $date = date_create();
 $fhddate = date_format($date, 'U')
 ?>
 
-<h4>Help Desk Settings</h4>
+<h4>AdminCop Settings</h4>
 
 <a href="fhd_settings_action.php?type=1" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Departments</a> 
 <a href="fhd_settings_action.php?type=2" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Request Types</a> 
@@ -34,7 +34,7 @@ $fhddate = date_format($date, 'U')
 <a href="fhd_users.php?support_staff=show" class="btn btn-default btn-sm"><i class="fa fa-cog"></i> Support Staff</a>
 
 <hr>
-<h4>Config Settings <small>from: fhd_config.php</small></h4>
+<h4>Config Settings <small></small></h4>
 
 <table class="<?php echo $table_style_1;?>" style='width: auto;'>
 <tr>
@@ -79,7 +79,7 @@ if ( !is_writable( dirname ( $upload_path ) ) ) {
 	<td><?php echo yesno(CAPTCHA_RESET_PASSWORD);?></td>
 </tr> 
 <tr>
-	<td>Allow unregistered users to open tickets</td>
+	<td>Allow unregistered users to create Cops</td>
 	<td><?php echo yesno(ALLOW_ANY_ADD);?></td>
 </tr> 
 <tr>
@@ -103,11 +103,6 @@ if ( !is_writable( dirname ( $upload_path ) ) ) {
 <tr>
 	<td>Database name</td>
 	<td><?php echo db_name;?></td>
-</tr> 
-
-<tr>
-	<td>CSS theme <a href="http://bootswatch.com/" target="_blank" class="btn btn-default btn-xs">view demo's</a></td>
-	<td><?php echo css;?></td>
 </tr> 
 
 </table>

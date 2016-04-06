@@ -7,7 +7,7 @@ include("includes/checksession_ss.php");
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ticket Details</title>
+	<title>Cop Details</title>
 <?php 
 include("fhd_config.php");
 include("includes/header.php");
@@ -145,7 +145,7 @@ if (isset($_POST['nacl'])){
 $nacl = md5(AUTH_KEY.$db->get_var("select last_login from site_users where user_id = $user_id;"));
 $site_calls = $db->get_row("SELECT call_id,call_first_name,call_last_name,call_phone,call_email,call_department,call_request,call_device,call_details ,call_date,call_date2,call_status,call_solution,call_phone,call_staff,call_user FROM site_calls WHERE (call_id = $call_id) limit 1;");
 ?>
-<h4>Ticket # <?php echo $call_id;?> &bull; Notes: <a href="#notes"><?php echo $isnotes;?></a></h4>
+<h4>Cop # <?php echo $call_id;?> &bull; Notes: <a href="#notes"><?php echo $isnotes;?></a></h4>
 <?php echo $actionstatus;?>
 
 <form action="fhd_call_edit.php" method="post" enctype="multipart/form-data" class="form-horizontal">

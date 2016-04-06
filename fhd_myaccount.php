@@ -111,7 +111,7 @@ $user_msg_send = $site_users->user_msg_send;
 	<div class="col-sm-offset-2 col-sm-6">
 	<div class="checkbox">
     <label>
-      <input type="checkbox" name="user_msg_send" value="1" <?php if($user_msg_send == 1){echo " CHECKED";}?>> Receive ticket status emails?
+      <input type="checkbox" name="user_msg_send" value="1" <?php if($user_msg_send == 1){echo " CHECKED";}?>> Receive Cop status emails?
     </label>
 	</div>
 	</div>

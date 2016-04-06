@@ -7,7 +7,7 @@ include("includes/checksession.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Ticket Details</title>
+	<title>Cop Details</title>
 <?php 
 include("fhd_config.php");
 include("includes/header.php");
@@ -58,17 +58,17 @@ if (isset($_POST['nacl'])){
 			$headers .="X-Mailer: PHP/" . phpversion() ."\r\n";
 			$headers .="MIME-Version: 1.0" . "\r\n";
 			$headers .="Content-type: text/html; charset=iso-8859-1" . "\r\n";
-			$subject = "Ticket ". FHD_TITLE ." [# $insert_id]";
+			$subject = "Cop ". FHD_TITLE ." [# $insert_id]";
 			$message = "
 		<html>
 		<head>
-		  <title>Ticket</title>
+		  <title>Cop</title>
 		</head>
 		<body>
-		  <p>Ticket Request Received.</p>
-		  <p>Ticket Number: $insert_id</p>
+		  <p>Cop Request Received.</p>
+		  <p>Cop Number: $insert_id</p>
 		  <p>Name: $call_first_name</p>
-		  <p>Ticket Details: $call_details</p>
+		  <p>Cop Details: $call_details</p>
 			";
 			//if user has config set, then send them an email
 			if ($db->get_var("select user_msg_send from site_users where user_id = $user_id;") == 1){
@@ -76,7 +76,7 @@ if (isset($_POST['nacl'])){
 			}
 			$mailsent = "&mailsent=yes";
 			//notify admin
-			mail(TO_EMAIL, "New Ticket [# $insert_id]", $message, $headers);
+			mail(TO_EMAIL, "New Cop [# $insert_id]", $message, $headers);
 			//</SEND EMAIL>
 		header("Location: fhd_calls.php?added=yes$mailsent");
  }
@@ -90,7 +90,7 @@ $myquery = "SELECT user_name,user_phone,user_email from site_users WHERE (user_i
 $user_info = $db->get_row($myquery);
 ?>
 
-<h4><i class='fa fa-tag'></i> Open Ticket</h4>
+<h4><i class='fa fa-tag'></i> Create Cop</h4>
 <?php echo $actionstatus;?>
 
 <form action="fhd_user_call_add.php" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -142,7 +142,7 @@ foreach ($device_name as $device )
 <?php } ?>
 
 <input type='hidden' name='nacl' value='<?php echo $nacl;?>'>
-<input type="submit" value="Open Ticket" class="btn btn-primary btn-large btn-success">
+<input type="submit" value="Create Cop" class="btn btn-primary btn-large btn-success">
 </form>
 <!-- validation -->
 <script type="text/javascript" src="js/livevalidation_standalone.compressed.js"></script>

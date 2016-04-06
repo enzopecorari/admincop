@@ -86,7 +86,7 @@ function makepwd($password) {
 return $return_pass;
 }
 
-//send user a closed ticket message.
+//send user a closed Cop message.
 function sendmessage_closed( $call_id ) {
 $call_id = valid_id($call_id);
 $db = new ezSQL_mysqli(db_user,db_password,db_name,db_host);
@@ -97,10 +97,10 @@ $db = new ezSQL_mysqli(db_user,db_password,db_name,db_host);
 	$call_email = $db->get_var("SELECT call_email FROM site_calls WHERE call_id = $call_id;");
 	$mail->AddAddress($call_email);
 	//Set the subject line
-	$mail->Subject = 'Ticket '.FHD_TITLE. ' [# '.$call_id.'] Closed.';
+	$mail->Subject = 'Cop '.FHD_TITLE. ' [# '.$call_id.'] Closed.';
 	//Read an HTML message body from an external file, convert referenced images to embedded, convert HTML into a basic plain-text alternative body
 	$call_solution = $db->get_var("SELECT call_solution FROM site_calls WHERE call_id = $call_id;");
-	$econtent = "Ticket Closed.<br><hr>".$call_solution;
+	$econtent = "Cop Closed.<br><hr>".$call_solution;
 	$mail->MsgHTML($econtent."<br>");
 	//Send the message
 	$mail->Send();

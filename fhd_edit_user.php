@@ -127,7 +127,7 @@ echo $actionstatus;?>
 	<td><?php echo $url_user_id;?></td></tr>
 
 	<tr><td colspan="2"><input type="checkbox" name="user_pending" value="1" <?php if($user_pending == 1){echo " CHECKED";}?>> User pending?</td></tr>
-	<tr><td colspan="2"><input type="checkbox" name="user_msg_send" value="1" <?php if($user_msg_send == 1){echo " CHECKED";}?>> Receive ticket status emails?</td></tr>
+	<tr><td colspan="2"><input type="checkbox" name="user_msg_send" value="1" <?php if($user_msg_send == 1){echo " CHECKED";}?>> Receive Cop status emails?</td></tr>
 	<tr><td colspan="2"><input type="checkbox" name="user_protect_edit" value="1" <?php if($user_protect_edit == 1){echo " CHECKED";}?>> Lock from user edit?</td></tr>
 
 </table>

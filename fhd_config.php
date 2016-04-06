@@ -1,5 +1,5 @@
 <?php
-/* The base configurations of Free Help Desk.
+/* The base configurations of Free AdminCop.
 /** The name of the database - create this first*/
 define('db_name', 'tableroh_freehelpdesk');
 
@@ -21,11 +21,11 @@ define('AUTH_KEY','mkt');
 /** Set how many login tries (session only)*/
 define('LOGIN_TRIES',100);
 
-/** email address to send new ticket and registration notices FROM, etc  */
-define('FROM_EMAIL','enzo.pecorari@telefonica.com');
+/** email address to send new Cop and registration notices FROM, etc  */
+define('FROM_EMAIL','enzopecorari@gmail.com');
 
-/** email address to send new ticket and registration notices TO, etc  */
-define('TO_EMAIL','enzo.pecorari@telefonica.com');
+/** email address to send new Cop and registration notices TO, etc  */
+define('TO_EMAIL','enzopecorari@gmail.com');
 
 /** Allow registrations yes or no */
 define('ALLOW_REGISTER','yes');
@@ -43,7 +43,7 @@ define('REGISTER_APPROVAL','yes');
 define('ALLOW_ANY_ADD','no');
 
 /** Enter the organization title **/
-define('FHD_TITLE', "Mkt Patagonia");
+define('FHD_TITLE', "AdminCop");
 
 /** Allow Uploads ** yes or no */
 define('FHD_UPLOAD_ALLOW', "yes");

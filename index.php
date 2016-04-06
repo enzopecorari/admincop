@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Help Desk</title>
+	<title>AdminCop</title>
 <?php
 $_SESSION['auth'] = md5(uniqid(microtime()));
 //check for fhd_config
@@ -75,7 +75,7 @@ if(isset($_SESSION['user_id'])){
 	$user_id = $_SESSION['user_id'];
 	include("includes/all-nav.php");
 	echo "<p>Welcome</p>";
-	echo "<p><a href='fhd_dashboard.php'>Help Desk Dashboard</a></p>";
+	echo "<p><a href='fhd_dashboard.php'>AdminCop Dashboard</a></p>";
 }else{
 ?>	
 
@@ -100,7 +100,7 @@ echo "<div class=\"alert alert-success\" style=\"max-width: 350px; text-align: c
 
 <?php
 if (ALLOW_ANY_ADD == 'yes') {
-	echo "<h4><a href='fhd_any_call_add.php' class='btn btn-success'>Open Ticket <i class='glyphicon glyphicon-new-window'></i></a></h4>";
+	echo "<h4><a href='fhd_any_call_add.php' class='btn btn-success'>Create Cop <i class='glyphicon glyphicon-new-window'></i></a></h4>";
 	echo "<hr>";
 	echo "<p>or Login</p>";
 }

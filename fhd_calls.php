@@ -5,7 +5,7 @@ include("includes/checksession.php");
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Open Tickets</title>
+	<title>Pending Cops</title>
 <?php
 include("fhd_config.php");
 include("includes/header.php");
@@ -30,7 +30,7 @@ $myquery = "SELECT call_id,call_date,call_first_name,call_last_name,call_request
 $site_calls = $db->get_results($myquery);
 $num = $db->num_rows;
 //$db->debug();
-echo "<h4><i class='fa fa-tags'></i> &nbsp; Open Tickets <small>[ $num ]</small></h4>";
+echo "<h4><i class='fa fa-tags'></i> &nbsp; Pending Cops <small>[ $num ]</small></h4>";
 if ($num > 0){
 ?>
 <table class="<?php echo $table_style_1;?>" style='width: auto;'>

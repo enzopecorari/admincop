@@ -42,7 +42,7 @@ if ($num > 0){
 	<th>Name</th>
 	<th>Email</th>
 	<th>Level</th>
-	<th>Email Ticket Updates</th>
+	<th>Email Cop Updates</th>
 	<th>Pending</th>
 	<th>Edit Locked</th>
 </tr>

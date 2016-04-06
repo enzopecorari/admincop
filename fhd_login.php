@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Help Desk</title>
+	<title>AdminCop</title>
 <?php
 $is_valid = 0;
 include("fhd_config.php");
@@ -99,8 +99,8 @@ $db->query("UPDATE site_users SET last_ip = '$lastip',last_login = '$last_login'
 //$d_last_login = $db->get_var("select last_login from site_users where user_id = $num limit 1;");
 ?>
 
-<h3><a href="fhd_user_call_add.php" class="btn btn-large btn-primary btn-success">Open Ticket</a></h3>
+<h3><a href="fhd_user_call_add.php" class="btn btn-large btn-primary btn-success">Create Cop</a></h3>
 
-<h3><a href="fhd_calls.php" class="btn btn-large btn-primary">View Tickets</a></h3>
+<h3><a href="fhd_calls.php" class="btn btn-large btn-primary">View Cops</a></h3>
 
 <?php include("includes/footer.php");

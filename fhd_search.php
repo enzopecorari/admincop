@@ -6,7 +6,7 @@ include("includes/checksession.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Ticket Search</title>
+	<title>Cop Search</title>
 <?php 
 include("fhd_config.php");
 include("includes/header.php");
@@ -109,7 +109,7 @@ if($user_level <> 1){
 //</RESULTS>
 ?>
 
-<h4 id="searchform"><i class='fa fa-search'></i> Ticket Search</h4>
+<h4 id="searchform"><i class='fa fa-search'></i> Cop Search</h4>
 
 <form action="fhd_search.php" method="get" name="chooseDateForm" class="form-horizontal">
 <table class="<?php echo $table_style_3;?>" style='width: auto;'>

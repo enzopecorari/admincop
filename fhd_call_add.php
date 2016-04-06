@@ -7,7 +7,7 @@ include("includes/checksession_ss.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Ticket Details</title>
+	<title>Cop Details</title>
 <?php 
 include("fhd_config.php");
 include("includes/header.php");
@@ -54,7 +54,7 @@ if (isset($_POST['nacl'])){
 
     $actionstatus = "<div class=\"alert alert-success\" style=\"max-width: 250px;\">
     <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-    Ticket Created.
+    Cop Created.
     </div>";
  }
 }
@@ -64,7 +64,7 @@ $nacl = md5(AUTH_KEY.$db->get_var("select last_login from site_users where user_
 $adjdate=date('Y-m-d');
 ?>
 
-<h4><i class='fa fa-tag'></i> Add Ticket</h4>
+<h4><i class='fa fa-tag'></i> Create Cop</h4>
 <?php echo $actionstatus;?>
 <form action="fhd_call_add.php" method="post" enctype="multipart/form-data" class="form-horizontal" data-parsley-validate>
 <table class="<?php echo $table_style_3;?>" style='width:75%;'>

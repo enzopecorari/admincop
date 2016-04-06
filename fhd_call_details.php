@@ -7,7 +7,7 @@ include("includes/checksession.php");
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Ticket Details</title>
+	<title>Cop Details</title>
 <?php 
 include("fhd_config.php");
 include("includes/header.php");
@@ -21,10 +21,10 @@ $db = new ezSQL_mysqli(db_user,db_password,db_name,db_host);
 $nacl = md5(AUTH_KEY.$db->get_var("select last_login from site_users where user_id = $user_id;"));
 $site_calls = $db->get_row("SELECT call_id,call_first_name,call_last_name,call_phone,call_email,call_department,call_request,call_device,call_details ,call_date,call_date2,call_status,call_solution,call_user,call_staff FROM site_calls WHERE (call_id = $call_id) limit 1;");
 ?>
-<h4><i class='fa fa-tag'></i> Ticket Details [ #<?php echo $call_id;?> ]</h4>
+<h4><i class='fa fa-tag'></i> Cop Details [ #<?php echo $call_id;?> ]</h4>
 
 <?php if($user_level <> 1){ ?>
-<p><i class="glyphicon glyphicon-edit"></i> <a href="fhd_call_edit.php?call_id=<?php echo $call_id;?>">Edit Ticket</a></p>
+<p><i class="glyphicon glyphicon-edit"></i> <a href="fhd_call_edit.php?call_id=<?php echo $call_id;?>">Edit Cop</a></p>
 <?php } ?>
 <table class="<?php echo $table_style_2;?>" style='width: auto;'>
 <?php

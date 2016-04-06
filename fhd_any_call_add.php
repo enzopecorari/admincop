@@ -12,7 +12,7 @@ if (ALLOW_ANY_ADD <> 'yes') {
 <html lang="en">
 <head>
 <meta charset="utf-8">
-	<title>Open Ticket</title>
+	<title>Create Cop</title>
 <?php 
 include("includes/header.php");
 include("includes/functions.php");
@@ -49,22 +49,22 @@ if (isset($_POST['nacl'])){
 			$headers .="X-Mailer: PHP/" . phpversion() ."\r\n";
 			$headers .="MIME-Version: 1.0" . "\r\n";
 			$headers .="Content-type: text/html; charset=iso-8859-1" . "\r\n";
-			$subject = "Ticket ". FHD_TITLE ." [# $insert_id]";
+			$subject = "Cop ". FHD_TITLE ." [# $insert_id]";
 			$message = "
 		<html>
 		<head>
-		  <title>Ticket</title>
+		  <title>Cop</title>
 		</head>
 		<body>
-		  <p>Ticket Request Received.</p>
-		  <p>Ticket Number: $insert_id</p>
+		  <p>Cop Request Received.</p>
+		  <p>Cop Number: $insert_id</p>
 		  <p>Name: $call_first_name</p>
-		  <p>Ticket Details: $call_details</p>
+		  <p>Cop Details: $call_details</p>
 			";
 			mail($call_email, $subject, $message, $headers);
 			$mailsent = "&mailsent=yes";
 			//notify admin
-			mail(TO_EMAIL, "New Ticket [# $insert_id]", $message, $headers);
+			mail(TO_EMAIL, "New Cop [# $insert_id]", $message, $headers);
 			//</SEND EMAIL>
 		header("Location: fhd_any_call_add.php?added=yes&mailsent&insert_id=$insert_id");
  }
@@ -75,13 +75,13 @@ if ( isset($_GET['added']) ){
 		$insert_id = checkid( $_GET['insert_id'] );
 		$actionstatus = "<div class=\"alert alert-success\" style=\"max-width: 350px;\">
 	    <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
-	    Ticket Created &bull; Email Sent &bull; Ticket ID: $insert_id</div>";
+	    Cop Created &bull; Email Sent &bull; Cop ID: $insert_id</div>";
 		echo $actionstatus;
 	}
 }
 ?>
 <p><a href="index.php" class="btn btn-default"><i class='fa fa-arrow-left'></i> <?php echo FHD_TITLE;?></a></p>
-<h4><i class='fa fa-tag'></i> Open Ticket</h4>
+<h4><i class='fa fa-tag'></i> Create Cop</h4>
 
 <form action="fhd_any_call_add.php" method="post" class="form-horizontal" data-parsley-validate>
 <table class="<?php echo $table_style_2;?>" style='width:75%;'>
@@ -127,7 +127,7 @@ foreach ($device_name as $device )
 	<tr><td valign="top">Details</td><td><textarea rows="5" name="call_details" id="call_details" style="width: 100%" required></textarea></td></tr>
 </table>
 <input type='hidden' name='nacl' value='any'>
-<input type="submit" value="Open Ticket" class="btn btn-primary btn-large btn-success">
+<input type="submit" value="Create Cop" class="btn btn-primary btn-large btn-success">
 </form>
 <!-- validation -->
 <script type="text/javascript" src="js/livevalidation_standalone.compressed.js"></script>
